@@ -1,0 +1,11 @@
+GET http://localhost:3000/user
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "name": "Pranay",
+    "email": "sampath@gmail.com",
+    "testcode": "123456"
+}
