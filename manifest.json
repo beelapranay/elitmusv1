@@ -1,0 +1,14 @@
+{
+    "name": "Test Form",
+    "version": "1.0.0",
+    "description": "Student Test Form",
+    "manifest_version": 3,
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://music.yandex.ru/; 'sha256-csoLNyIEO0OhGg21LWV6kZAmPEtk1Oamsn3ZJChnL7s='"
+    },
+    "author": "pranay",
+    "action":{
+        "default_popup": "views/home.html",
+        "default_title": "Student Test Form"
+    }
+}

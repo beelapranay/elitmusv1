@@ -1,6 +1,7 @@
 const dotenv = require('dotenv')
 const express = require('express')
 const mongoose = require('mongoose')
+const expressLayouts = require('express-ejs-layouts')
 
 dotenv.config()
 const app = express()
@@ -19,6 +20,8 @@ mongoose.connect(url,connectionParams)
     })
 
 app.use(express.json())
+app.use(expressLayouts)
+app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
     res.send('From the server');

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Covid-19 Stats- UK</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <form class="form">
+        <input type="text" id="name" name="name" placeholder="Name"><br>
+        <input type="text" id="email" name="email" placeholder="E-Mail"><br>
+        <input type="text" id="code" name="code" placeholder="Test Invitation Code"><br><br>
+        <input type="submit" value="Start Test" name="submit" id="submit" onclick="forming()">
+    </form>
+
+    <script type="text/javascript" src="../submit.js"></script>
+
+    <script type="text/javascript">
+        function forming() {
+            var data = {
+                "name": fname.value,
+                "email": email.value,
+                "testcode": code.value
+            }
+
+            console.log(data)
+
+            fetch('https://fce7-49-204-133-92.in.ngrok.io/user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            }).then(res => res.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+        }
+    </script>
+</body>
+
+</html>
